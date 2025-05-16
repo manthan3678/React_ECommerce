@@ -5,6 +5,7 @@ import Cart from "./pages/cart/Cart";
 import { CartContext } from "./context/cartcontext/CartContext";
 import Header from "./components/header/Header";
 import Login from "./pages/auth/Login";
+import SignUp from "./pages/auth/SignUp";
 const App = () => {
   const { products } = useContext(CartContext);
   console.log(products);
@@ -14,7 +15,10 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
+
           <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
+
           <Route path="/cart" element={<Cart />} />
         </Routes>
       </BrowserRouter>
