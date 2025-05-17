@@ -17,8 +17,6 @@ const SignUp = () => {
       password,
       number,
     };
-
-    console.log(data);
     localStorage.setItem("UserData", JSON.stringify(data));
     toast.success("SignUp SuccessFully");
     navigate("/login");

@@ -12,12 +12,13 @@ const Header = () => {
     toast.success("Logout SuccessFully");
   };
   return (
-    <div className="navbar bg-base-100 shadow-sm border border-b-blue-200">
+    <div className="navbar bg-base-100 shadow-2xl border border-amber-50/30 ">
       <div className="flex-1">
-        <a className="btn btn-ghost text-xl">Ecommerce</a>
+        <a className="btn btn-ghost text-2xl">Ecommerce</a>
       </div>
 
       <div className="flex gap-5 items-center">
+        {/* User Name */}
         <div>
           {!auth ? (
             <>

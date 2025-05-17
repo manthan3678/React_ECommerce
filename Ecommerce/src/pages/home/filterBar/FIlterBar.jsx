@@ -7,7 +7,7 @@ const FIlterBar = () => {
     rating: 3,
   });
   return (
-    <div className="min-h-screen w-full max-w-[20rem] border-r  border-r-white">
+    <div className="min-h-screen w-full max-w-[20rem] border-r  border-r-amber-50/30">
       {/* !!!!!!!!!! RAdio Asending and Desending !!!!!!!! */}
       <div className="my-3 mx-2">
         <div className="form-control ">
