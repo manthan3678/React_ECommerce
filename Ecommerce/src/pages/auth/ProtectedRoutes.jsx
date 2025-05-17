@@ -11,6 +11,7 @@ const ProtectedRoutes = ({ children }) => {
       // Session has expired
       localStorage.removeItem("loginTime");
       localStorage.removeItem("expiryTime");
+      localStorage.removeItem("UserStatus");
       // Redirect to login page or perform logout operations
     }
   };

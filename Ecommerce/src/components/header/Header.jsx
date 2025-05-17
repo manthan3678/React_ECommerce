@@ -1,13 +1,56 @@
 import React from "react";
-
+import { useAuth } from "../../context/auth/AuthContext";
+import { Link, NavLink } from "react-router-dom";
 const Header = () => {
+  const [auth] = useAuth();
+  // console.log(auth);
+  const handleLogout = () => {
+    localStorage.removeItem("UserStatus");
+    localStorage.removeItem("expiryTime");
+    localStorage.removeItem("loginTime");
+  };
   return (
     <div className="navbar bg-base-100 shadow-sm border border-b-blue-200">
       <div className="flex-1">
         <a className="btn btn-ghost text-xl">Ecommerce</a>
       </div>
 
-      <div className="flex gap-5">
+      <div className="flex gap-5 items-center">
+        <div>
+          {!auth ? (
+            <>
+              <div className="flex">
+                <li className="btn bg-sky-200 text-black mx-2 my-2 list-none ">
+                  <NavLink to={"/signup"}>Register</NavLink>
+                </li>
+                <li className="btn bg-sky-200 text-black mx-2 my-2 list-none">
+                  <NavLink to={"/login"}>Login</NavLink>
+                </li>
+              </div>
+            </>
+          ) : (
+            // DROP DOWN
+            <div className="dropdown dropdown-hover">
+              <div
+                tabIndex={0}
+                role="button"
+                className="btn m-1 bg-sky-200 text-black"
+              >
+                {auth}
+              </div>
+              <ul
+                tabIndex={0}
+                className="bg-sky-200 dropdown-content menu rounded-box z-1 w-52 p-2 shadow-sm"
+              >
+                <li className="text-black hover:bg-sky-400 font-semibold">
+                  <NavLink to={"/login"} onClick={handleLogout}>
+                    Logout
+                  </NavLink>
+                </li>
+              </ul>
+            </div>
+          )}
+        </div>
         {/* Search */}
         <div className="form-control">
           <input

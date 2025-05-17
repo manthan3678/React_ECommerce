@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
+import Ratings from "../../../components/ratings/Ratings";
 
 const FIlterBar = () => {
+  const [filter, setFilter] = useState({
+    price: "",
+    rating: 3,
+  });
   return (
     <div className="min-h-screen w-full max-w-[20rem] border-r  border-r-white">
-      {/*  RAdio Asending and Desending */}
+      {/* !!!!!!!!!! RAdio Asending and Desending !!!!!!!! */}
       <div className="my-3 mx-2">
         <div className="form-control ">
           <label className="label cursor-pointer">
@@ -28,6 +33,43 @@ const FIlterBar = () => {
           </label>
         </div>
       </div>
+      {/*  !!!!!!!!! CheckBOx !!!!!!!!!!  */}
+      <div className="h-[1px] w-full bg-white/20 my-6"></div>
+      {/* check box for out of stock and fast deliver */}
+      <div className="mx-2">
+        <div className="form-control">
+          <label className="label cursor-pointer">
+            <span className="label-text">Include Out Of Stock</span>
+            <input
+              type="checkbox"
+              name="includeOutOfStock"
+              className=" ml-5 checkbox border-blue-500 [--chkbg:theme(colors.blue.600)] [--chkfg:orange] checked:border-indigo-800"
+            />
+          </label>
+        </div>
+        <div className="form-control my-3">
+          <label className="label cursor-pointer">
+            <span className="label-text">Fast Delivery Only</span>
+            <input
+              type="checkbox"
+              name="fastDelivery"
+              className="ml-10 checkbox border-blue-500 [--chkbg:theme(colors.blue.600)] [--chkfg:orange] checked:border-indigo-800"
+            />
+          </label>
+        </div>
+      </div>
+      {/* !!!!!! Rating !!!!!!! */}
+      <Ratings
+        defaultRating={filter.rating}
+        isEditable={true}
+        onRatingChange={(rating) =>
+          setFilter({
+            ...filter,
+            rating: rating,
+          })
+        }
+      />
+      <Ratings />
     </div>
   );
 };
