@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -14,20 +14,19 @@ const Login = () => {
       //
       const status = true;
       const loginTime = new Date().getTime();
-      // console.log(loginTime);
       const expirytime = loginTime + 60 * 60 * 1000;
-      // console.log(expirytime);
-
       // LocalStorage !!!!!
       const userStatus = localStorage.setItem("UserStatus", status);
       localStorage.setItem("loginTime", loginTime);
       localStorage.setItem("expiryTime", expirytime);
-      // console.log(userStatus);
-      alert("Login SuccesFully");
+
+      toast.success("Login SuccesFully");
+      setEmail("");
+      setPassword("");
       navigate("/");
+    } else {
+      toast.error("Something Went Wrong Check Email Or Password");
     }
-    setEmail("");
-    setPassword("");
   };
   return (
     <div className="flex h-screen w-screen items-center justify-center">

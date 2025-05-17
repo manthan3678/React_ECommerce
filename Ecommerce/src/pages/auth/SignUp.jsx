@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 const SignUp = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -20,6 +20,7 @@ const SignUp = () => {
 
     console.log(data);
     localStorage.setItem("UserData", JSON.stringify(data));
+    toast.success("SignUp SuccessFully");
     navigate("/login");
     setEmail("");
     setPassword("");

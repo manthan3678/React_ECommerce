@@ -1,6 +1,7 @@
 import React from "react";
 import { useAuth } from "../../context/auth/AuthContext";
 import { Link, NavLink } from "react-router-dom";
+import { toast } from "react-toastify";
 const Header = () => {
   const [auth] = useAuth();
   // console.log(auth);
@@ -8,6 +9,7 @@ const Header = () => {
     localStorage.removeItem("UserStatus");
     localStorage.removeItem("expiryTime");
     localStorage.removeItem("loginTime");
+    toast.success("Logout SuccessFully");
   };
   return (
     <div className="navbar bg-base-100 shadow-sm border border-b-blue-200">
