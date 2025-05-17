@@ -11,8 +11,19 @@ const Login = () => {
     e.preventDefault();
 
     if (email === userdata.email && password === userdata.password) {
-      console.log("Login SuccesFully");
-      toast.success("Login SuccessFully");
+      //
+      const status = true;
+      const loginTime = new Date().getTime();
+      // console.log(loginTime);
+      const expirytime = loginTime + 60 * 60 * 1000;
+      // console.log(expirytime);
+
+      // LocalStorage !!!!!
+      const userStatus = localStorage.setItem("UserStatus", status);
+      localStorage.setItem("loginTime", loginTime);
+      localStorage.setItem("expiryTime", expirytime);
+      // console.log(userStatus);
+      alert("Login SuccesFully");
       navigate("/");
     }
     setEmail("");
