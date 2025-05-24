@@ -8,8 +8,8 @@ import Login from "./pages/auth/Login";
 import SignUp from "./pages/auth/SignUp";
 import ProtectedRoutes from "./pages/auth/ProtectedRoutes";
 const App = () => {
-  const { products } = useContext(CartContext);
-  console.log(products);
+  // const { products } = useContext(CartContext);
+  // console.log(products);
   return (
     <>
       {/* <Header /> */}

@@ -3,9 +3,17 @@ import Ratings from "../../../components/ratings/Ratings";
 
 const FIlterBar = () => {
   const [filter, setFilter] = useState({
-    price: "",
+    price: 5000,
     rating: 3,
   });
+  //
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setFilter((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
   return (
     <div className="min-h-screen w-full max-w-[20rem] border-r  border-r-amber-50/30">
       {/* !!!!!!!!!! RAdio Asending and Desending !!!!!!!! */}
@@ -59,17 +67,35 @@ const FIlterBar = () => {
         </div>
       </div>
       {/* !!!!!! Rating !!!!!!! */}
-      <Ratings
-        defaultRating={filter.rating}
-        isEditable={true}
-        onRatingChange={(rating) =>
-          setFilter({
-            ...filter,
-            rating: rating,
-          })
-        }
-      />
-      <Ratings />
+      <div className="my-3 mx-2 p-2 border border-white">
+        <Ratings
+          defaultRating={filter.rating}
+          isEditable={true}
+          onRatingChange={(rating) =>
+            setFilter({
+              ...filter,
+              rating: rating,
+            })
+          }
+        />
+      </div>
+      {/* ############ Range Price ############  */}
+      <div className=" flex flex-col my-4">
+        <p>
+          Price <strong>{filter.price}</strong> Rs
+        </p>
+        <input
+          type="range"
+          min={0}
+          max={5000}
+          name="price"
+          value={filter.price}
+          className="range range-info"
+          onChange={(event) => handleInputChange(event)}
+        />
+      </div>
+      {/* Clear Filters Button */}
+      <button className="btn btn-neutral w-full">Clear Filters</button>
     </div>
   );
 };
