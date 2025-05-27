@@ -1,29 +1,59 @@
 import React from "react";
-
-const ProductCard = () => {
+import { AiOutlineThunderbolt } from "react-icons/ai";
+import Ratings from "../../../components/ratings/Ratings";
+const ProductCard = ({ productDetails }) => {
+  // console.log(productDetails);
   return (
     <div className="card bg-base-100 shadow-sm border border-white">
       <figure>
         <img
-          src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+          src={productDetails.image}
+          className="aspect-video object-cover"
           alt="Shoes"
         />
       </figure>
       {/*  */}
       <div className="card-body">
         <h2 className="card-title">
-          Card Title
-          <div className="badge badge-secondary">NEW</div>
+          <span className="line-clamp-1">{productDetails.productName}</span>
+          {/* Conditional */}
+          {productDetails.new && (
+            <div className="badge badge-secondary">NEW</div>
+          )}
         </h2>
+        {/* !!!!!!!!!!!!!!! desciption */}
+        <p className="line-clamp-2">{productDetails.productDescription}</p>
         <p>
-          A card component has a figure, a body part, and inside body there are
-          title and actions parts
+          <strong>{productDetails.price}</strong> Rs
         </p>
+        {/* Instock !!!!!!!!!!!!!!!! */}
         <p>
-          <strong>421</strong> Rs
+          {/* conditionals */}
+          {productDetails.inStock ? (
+            <p className="text-green-400">
+              {" "}
+              {productDetails.inStock} Items Left...
+            </p>
+          ) : (
+            <p className="text-red-500">Out Of Stock.....</p>
+          )}
         </p>
-        <p>Out Of Stock</p>
-        <div className="card-actions justify-between">
+        {/* !!!!!!!!!! Delivery */}
+        <p>
+          {/* conditionals */}
+          {productDetails.fastDelivery ? (
+            <p className="text-blue-400 flex items-center gap-2">
+              {" "}
+              Fast delivery <AiOutlineThunderbolt className="mt-1" />
+            </p>
+          ) : (
+            <p className="text-blue-400">5 Days Delivery.</p>
+          )}
+        </p>
+        {/* Rating */}
+        <Ratings defaultRating={productDetails.ratings} className={`w-5 h-5`} />
+        {/* @@@@@@@@@ button @@@@@@@@@ */}
+        <div className="card-actions justify-between my-2">
           {/* <div className="badge badge-outline">Fashion</div>
           <div className="badge badge-outline">Products</div> */}
           <button className="btn btn-outline btn-info">Add To Cart</button>

@@ -5,11 +5,11 @@ import ProductCard from "./ProductCard";
 
 const Body = () => {
   const { products } = useContext(CartContext);
-  console.log(products);
+  // console.log(products);
   return (
-    <div className="grid grid-cols-3 gap-[1rem] my-2 mx-1">
-      {products.map((product) => {
-        return <ProductCard />;
+    <div className="grid grid-cols-3 gap-[1rem] my-2 mx-1 p-2">
+      {products.map((productDetails) => {
+        return <ProductCard productDetails={productDetails} />;
       })}
     </div>
   );

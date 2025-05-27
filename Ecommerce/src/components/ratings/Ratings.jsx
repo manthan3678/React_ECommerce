@@ -4,6 +4,7 @@ const Ratings = ({
   defaultRating = 1,
   isEditable,
   onRatingChange = () => {},
+  className,
 }) => {
   const [selectedRating, setSelectedRating] = useState(defaultRating);
 
@@ -21,13 +22,13 @@ const Ratings = ({
                 <input
                   key={i}
                   onClick={() => setSelectedRating(value)}
-                  className="mask mask-star-2 bg-orange-400"
+                  className={`mask mask-star-2 bg-orange-400 ${className}`}
                 />
               ) : (
                 <input
                   key={i}
                   onClick={() => setSelectedRating(value)}
-                  className="mask mask-star-2 bg-orange-400/2"
+                  className={`mask mask-star-2 bg-orange-400/2 ${className}`}
                 />
               )}
             </>

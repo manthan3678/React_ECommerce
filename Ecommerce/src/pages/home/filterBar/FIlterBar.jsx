@@ -15,7 +15,7 @@ const FIlterBar = () => {
     }));
   };
   return (
-    <div className="min-h-screen w-full max-w-[20rem] border-r  border-r-amber-50/30">
+    <div className="min-h-screen w-full max-w-[20rem] border-r p-3 border-r-amber-50/30">
       {/* !!!!!!!!!! RAdio Asending and Desending !!!!!!!! */}
       <div className="my-3 mx-2">
         <div className="form-control ">
@@ -67,7 +67,7 @@ const FIlterBar = () => {
         </div>
       </div>
       {/* !!!!!! Rating !!!!!!! */}
-      <div className="my-3 mx-2 p-2 border border-white">
+      <div className="my-4 mx-1 p-3 border border-white">
         <Ratings
           defaultRating={filter.rating}
           isEditable={true}
@@ -90,12 +90,12 @@ const FIlterBar = () => {
           max={5000}
           name="price"
           value={filter.price}
-          className="range range-info"
+          className="range range-info my-1"
           onChange={(event) => handleInputChange(event)}
         />
       </div>
       {/* Clear Filters Button */}
-      <button className="btn btn-neutral w-full">Clear Filters</button>
+      <button className="btn btn-success w-full">Clear Filters</button>
     </div>
   );
 };

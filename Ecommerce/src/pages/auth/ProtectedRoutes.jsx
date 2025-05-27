@@ -21,7 +21,7 @@ const ProtectedRoutes = ({ children }) => {
   }, 60 * 1000); // 60,000 milliseconds = 1 minute
 
   const loginStatus = localStorage.getItem("UserStatus");
-  console.log(loginStatus);
+  // console.log(loginStatus);
   useEffect(() => {
     if (loginStatus === null || loginStatus === false) {
       navigate("/login");

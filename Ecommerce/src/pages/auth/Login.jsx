@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -60,6 +60,12 @@ const Login = () => {
               setPassword(e.target.value);
             }}
           />
+          <p className="p-2 text-amber-100">
+            Create Account{" "}
+            <Link to="/signup" className="text-green-300">
+              Click Here
+            </Link>
+          </p>
           <button className=" bg-emerald-600 rounded-full py-3 px-5 outline-none placeholder:text-black">
             Login
           </button>
