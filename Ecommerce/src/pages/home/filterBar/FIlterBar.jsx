@@ -15,7 +15,7 @@ const FIlterBar = () => {
     }));
   };
   return (
-    <div className="min-h-screen w-full max-w-[20rem] border-r p-3 border-r-amber-50/30">
+    <div className="min-h-screen w-full min-w-[16rem] border-r p-3 border-r-amber-50/30">
       {/* !!!!!!!!!! RAdio Asending and Desending !!!!!!!! */}
       <div className="my-3 mx-2">
         <div className="form-control ">

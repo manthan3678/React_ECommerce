@@ -17,7 +17,7 @@ const Header = () => {
         <a className="btn btn-ghost text-2xl">Ecommerce</a>
       </div>
 
-      <div className="flex gap-5 items-center">
+      <div className="flex gap-5 items-center max-[450px]:hidden">
         {/* User Name */}
         <div>
           {!auth ? (

@@ -8,7 +8,9 @@ const Home = () => {
     <>
       <Header />
       <div className=" text-white flex">
-        <FIlterBar />
+        <div className="max-[570px]:hidden">
+          <FIlterBar />
+        </div>
         <Body />
       </div>
     </>

@@ -7,7 +7,7 @@ const Body = () => {
   const { products } = useContext(CartContext);
   // console.log(products);
   return (
-    <div className="grid grid-cols-3 gap-[1rem] my-2 mx-1 p-2">
+    <div className="grid grid-cols-3 gap-[1rem] max-[1100px]:grid-cols-2 max-[850px]:grid-cols-1 my-2 mx-1 p-2">
       {products.map((productDetails) => {
         return <ProductCard productDetails={productDetails} />;
       })}
