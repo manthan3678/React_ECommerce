@@ -8,7 +8,7 @@ const ProductCard = ({ productDetails }) => {
       <figure>
         <img
           src={productDetails.image}
-          className="aspect-video object-cover"
+          className="aspect-video object-cover h-full w-full"
           alt="Shoes"
         />
       </figure>

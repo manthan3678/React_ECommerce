@@ -15,7 +15,7 @@ const FIlterBar = () => {
     }));
   };
   return (
-    <div className="min-h-screen w-full min-w-[16rem] border-r p-3 border-r-amber-50/30">
+    <div className="sticky top-[3rem] h-fit w-full min-w-[16rem] border-r p-3 border-r-amber-50/30">
       {/* !!!!!!!!!! RAdio Asending and Desending !!!!!!!! */}
       <div className="my-3 mx-2">
         <div className="form-control ">
@@ -24,7 +24,7 @@ const FIlterBar = () => {
             <input
               type="radio"
               name="sortingType"
-              className="radio checked:bg-blue-500 ml-5"
+              className="radio border border-amber-50 checked:bg-blue-500 ml-5"
               value="ascending"
             />
           </label>
@@ -35,7 +35,7 @@ const FIlterBar = () => {
             <input
               type="radio"
               name="sortingType"
-              className="radio checked:bg-blue-500 ml-3"
+              className="radio border border-amber-50 checked:bg-blue-500 ml-3"
               value="descending"
             />
           </label>
