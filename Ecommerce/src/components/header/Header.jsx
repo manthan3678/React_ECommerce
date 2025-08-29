@@ -3,6 +3,7 @@ import { IoIosMenu } from "react-icons/io";
 import { useAuth } from "../../context/auth/AuthContext";
 import { Link, NavLink } from "react-router-dom";
 import { toast } from "react-toastify";
+import FIlterBar from "../../pages/home/filterBar/FIlterBar";
 const Header = () => {
   const [auth] = useAuth();
   // console.log(auth);
@@ -15,15 +16,17 @@ const Header = () => {
   return (
     <div className="navbar bg-base-100 shadow-2xl border border-amber-50/30 sticky top-0 z-[100]">
       <div className="flex-1">
-        <div className="drawer">
+        {/* Drawer Start */}
+
+        {/* <div className="drawer min-[570px]:hidden">
           <input id="my-drawer" type="checkbox" className="drawer-toggle" />
           <div className="drawer-content">
-            {/* Page content here */}
+            
             <label
               htmlFor="my-drawer"
-              className="btn btn-primary drawer-button"
+              className="btn tn-outline btn-info btn-sm px-2 drawer-button"
             >
-              <IoIosMenu />
+              <IoIosMenu className="text-xl" />
             </label>
           </div>
           <div className="drawer-side">
@@ -33,16 +36,12 @@ const Header = () => {
               className="drawer-overlay"
             ></label>
             <ul className="menu bg-base-200 text-base-content min-h-full w-80 p-4">
-              {/* Sidebar content here */}
-              <li>
-                <a>Sidebar Item 1</a>
-              </li>
-              <li>
-                <a>Sidebar Item 2</a>
-              </li>
+            
+              <FIlterBar />
             </ul>
           </div>
-        </div>
+        </div> */}
+        {/* Drawer End */}
         <a className="btn btn-ghost text-2xl">Ecommerce</a>
       </div>
 
