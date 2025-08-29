@@ -17,7 +17,7 @@ const Ratings = ({
       <div className={`rating ${!isEditable && "pointer-events-none"}`}>
         {[1, 2, 3, 4, 5].map((value, i) => {
           return (
-            <>
+            <div key={i}>
               {value <= selectedRating ? (
                 <input
                   key={i}
@@ -31,7 +31,7 @@ const Ratings = ({
                   className={`mask mask-star-2 bg-orange-400/2 ${className}`}
                 />
               )}
-            </>
+            </div>
           );
         })}
       </div>
